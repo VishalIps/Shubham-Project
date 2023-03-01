@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Blood Donation Management System</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+</head>
+<style>
+
+  .button-83 {
+    appearance: button;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #fff, #f8eedb);
+    border: 0 solid #e5e7eb;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #482307;
+    column-gap: 1rem;
+    cursor: pointer;
+    display: flex;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+    outline: 2px solid transparent;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-transform: none;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+  }
+
+  .button-83:active {
+    background-color: #f3f4f6;
+    box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+    transform: translateY(0.125rem);
+  }
+
+
+  .button-83:focus {
+    box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+  }
+
+  body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: radial-gradient(circle, rgba(198,93,155,1) -200%, rgba(185,255,222,1) 72%);}
+
+
+
+</style>
+<body>
+
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <br>
+      <br>
+      <h4 style="text-align: center"><h1 style="color: #ff1717"><b></b></h1></h4>
+      <br>
+      <h3 style="text-align: center"> EMPLOYEE LOGIN</h3>
+      <br>
+      <form th:action="@{/login}" method="post">
+
+        <!-- error message -->
+        <div th:if="${param.error}">
+          <div class="alert alert-danger">Invalid username or
+            password.
+          </div>
+        </div>
+
+        <!-- logout message -->
+        <div th:if="${param.logout}">
+          <div class="alert alert-info">You have been logged out.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="username"> Username </label> :
+          <input type="text" class="form-control" id="username" name="username"
+                 placeholder="Enter Email ID" autofocus="autofocus">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>: <input type="password"
+                                                         id="password" name="password" class="form-control"
+                                                         placeholder="Enter Password"/>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <input type="submit" name="login-submit" id="login-submit"
+                     class="form-control btn btn-primary" value="Log In"/>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="form-group">
+        <div>
+          <a href="/" th:href="@{/registration}">
+            <button class="button-83" role="button">Register Here</button>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
